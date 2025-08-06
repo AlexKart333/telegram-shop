@@ -1,8 +1,8 @@
 // Пример товаров
 const products = [
-    { id: 1, name: "Кофта", price: 1500, image: "images/hoodie.png" },
-    { id: 2, name: "Шапка", price: 800, image: "images/hat.png" },
-    { id: 3, name: "Перчатки", price: 600, image: "images/gloves.png" }
+    { id: 1, name: "Органайзер", price: 1500, image: "images/hoodie.png" },
+    { id: 2, name: "Радуга", price: 2500, image: "images/hat.png" },
+    { id: 3, name: "Магнит", price: 900, image: "images/gloves.png" }
   ];
   
   // Корзина
