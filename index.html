@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мой Магазин</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>🛍️ Добро пожаловать в магазин!</h1>
+
+    <!-- Страница: Товары -->
+    <div id="products-page" class="page active">
+      <h2>Товары</h2>
+      <div id="products-list"></div>
+      <button onclick="showCart()" class="btn-primary">Корзина (0)</button>
+    </div>
+
+    <!-- Страница: Корзина -->
+    <div id="cart-page" class="page">
+      <h2>Корзина</h2>
+      <div id="cart-items"></div>
+      <p><strong>Итого: <span id="total-price">0</span> ₽</strong></p>
+      <button onclick="sendOrder()" class="btn-success">Оформить заказ</button>
+      <button onclick="showProducts()" class="btn-secondary">Назад</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
