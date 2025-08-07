@@ -89,6 +89,16 @@ function addToCart(product) {
   Telegram.WebApp.HapticFeedback.impactOccurred("light"); // вибрация (на iOS)
 }
 
+function addToCartFromCard(event, productId) {
+  event.stopPropagation(); // Останавливаем всплытие — чтобы не открылись детали
+  const product = products.find(p => p.id === productId);
+  if (product) {
+    addToCart(product);
+    // Лёгкая вибрация при добавлении
+    Telegram.WebApp.HapticFeedback.impactOccurred("light");
+  }
+}
+
 function removeFromCart(id) {
   cart = cart.filter(item => item.id !== id);
   updateCartButton();
@@ -188,4 +198,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   showProducts();
 });
+
 
