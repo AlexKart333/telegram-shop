@@ -72,7 +72,7 @@ h1, h2 {
 .product-card {
   background: white;
   border: 1px solid #999;
-  border-radius: 12px; /* ✅ Скругление карточки */
+  border-radius: 12px;
   padding: 12px;
   text-align: center;
   cursor: pointer;
@@ -90,7 +90,7 @@ h1, h2 {
   object-fit: cover;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* ✅ Скругление изображения */
+  border-radius: 8px;
 }
 
 .product-card h3 {
@@ -105,7 +105,7 @@ h1, h2 {
 }
 
 .product-card .product-price {
-  color: #c00;
+  color: #000; /* ✅ Цвет цены: чёрный */
   font-weight: bold;
   margin: 8px 0;
   font-size: 15px;
@@ -121,7 +121,7 @@ h1, h2 {
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 12px; /* ✅ Скругление кнопки */
+  border-radius: 12px;
 }
 
 /* Детали товара */
@@ -129,7 +129,7 @@ h1, h2 {
   background: #f0f0f0;
   padding: 16px;
   border: 1px solid #ccc;
-  border-radius: 12px; /* ✅ Скругление блока */
+  border-radius: 12px;
   margin-bottom: 16px;
 }
 
@@ -140,12 +140,12 @@ h1, h2 {
   background: #ddd;
   border: 1px solid #bbb;
   margin-bottom: 12px;
-  border-radius: 8px; /* ✅ Скругление фото */
+  border-radius: 8px;
 }
 
 #detail-price {
   font-size: 18px;
-  color: #c00;
+  color: #000; /* ✅ Цвет цены: чёрный */
   margin-bottom: 10px;
   display: block;
 }
@@ -168,7 +168,7 @@ h1, h2 {
   text-transform: uppercase;
   cursor: pointer;
   margin-bottom: 10px;
-  border-radius: 12px; /* ✅ Скругление */
+  border-radius: 12px;
 }
 
 .btn-buy-now {
@@ -182,7 +182,7 @@ h1, h2 {
   text-transform: uppercase;
   cursor: pointer;
   margin-bottom: 12px;
-  border-radius: 12px; /* ✅ Скругление */
+  border-radius: 12px;
 }
 
 /* Корзина */
@@ -191,7 +191,7 @@ h1, h2 {
   padding: 12px;
   margin: 10px 0;
   border: 1px solid #ccc;
-  border-radius: 12px; /* ✅ Скругление элемента корзины */
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -204,7 +204,7 @@ h1, h2 {
   border: none;
   width: 28px;
   height: 28px;
-  border-radius: 50%; /* Круглая кнопка удаления */
+  border-radius: 50%;
   cursor: pointer;
   font-weight: bold;
 }
@@ -214,7 +214,7 @@ button {
   padding: 12px;
   margin: 8px 0;
   border: 1px solid #000;
-  border-radius: 12px; /* ✅ ГЛОБАЛЬНОЕ СКРУГЛЕНИЕ ДЛЯ ВСЕХ КНОПОК */
+  border-radius: 12px;
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   font-size: 15px;
@@ -251,7 +251,7 @@ button {
   background: #222;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 8px; /* ✅ Скругление уведомления */
+  border-radius: 8px;
   font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   text-align: center;
