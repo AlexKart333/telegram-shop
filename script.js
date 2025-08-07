@@ -261,3 +261,45 @@ document.addEventListener("DOMContentLoaded", function () {
   renderProducts();
   showProducts();
 });
+/* === Логотип === */
+.logo-container {
+  text-align: center;
+  padding: 10px 0;
+  background: #f8f8f8;
+  border-bottom: 1px solid #aaa;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+/* === Всплывающее уведомление (Toast) === */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
