@@ -166,3 +166,53 @@ button {
   color: white;
   width: 100%;
 }
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  cursor: pointer; /* Показываем, что карточка кликабельна */
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+/* Эффект при наведении/нажатии */
+.product-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.product-card .product-thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.product-card h3 {
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-card .product-price {
+  color: #e74c3c;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.product-card .btn-add {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 6px 0;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+}
