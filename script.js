@@ -126,4 +126,138 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("cart-page").classList.remove("active");
     document.getElementById("product-detail-page").classList.add("active");
 
-    document.querySelector(".btn-add-to-cart").
+    document.querySelector(".btn-add-to-cart").onclick = () => addToCart(product);
+  }
+
+  function addToCart(product) {
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    updateCartButton();
+    Telegram.WebApp.HapticFeedback?.impactOccurred?.("light");
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCartButton();
+    renderCart();
+  }
+
+  function updateCartButton() {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    if (cartButton) {
+      cartButton.textContent = `КОРЗИНА (${count})`;
+    }
+  }
+
+  function renderCart() {
+    const container = document.getElementById("cart-items");
+    const totalEl = document.getElementById("total-price");
+
+    if (!container || !totalEl) return;
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>КОРЗИНА ПУСТА</p>";
+      totalEl.textContent = "0";
+      return;
+    }
+
+    container.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+      const cost = item.price * item.quantity;
+      total += cost;
+
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <div>
+          <strong>${item.name}</strong> ×${item.quantity}<br>
+          <small>${item.price} ₽ × ${item.quantity}</small>
+        </div>
+        <div style="text-align: right;">
+          <div><strong>${cost} ₽</strong></div>
+          <button class="btn-remove" onclick="removeFromCart(${item.id})">×</button>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+
+    totalEl.textContent = total;
+  }
+
+  function sendOrder() {
+    if (cart.length === 0) return;
+
+    const user = Telegram.WebApp.initDataUnsafe.user;
+    const userName = user ? `${user.first_name}${user.last_name ? " " + user.last_name : ""}` : "Неизвестный";
+
+    const message = {
+      action: "order",
+      brand: "Конкретика",
+      user: userName,
+      userId: user?.id,
+      items: cart.map(item => ({
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity
+      })),
+      total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    };
+
+    Telegram.WebApp.sendData(JSON.stringify(message));
+  }
+
+  function renderProducts() {
+    const container = document.getElementById("products-list");
+    if (!container) {
+      console.error("Контейнер товаров не найден");
+      return;
+    }
+
+    container.innerHTML = "";
+
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="product-thumb">
+        <h3>${product.name}</h3>
+        <p class="product-price">${product.price} ₽</p>
+        <button class="btn-add" onclick="addToCartFromCard(event, ${product.id})">➕ В КОРЗИНУ</button>
+      `;
+      card.onclick = (e) => {
+        if (e.target.closest('.btn-add')) return;
+        showProductDetail(product.id);
+      };
+      container.appendChild(card);
+    });
+
+    console.log("Товары отрендерены:", products.length);
+  }
+
+  window.addToCartFromCard = function(event, productId) {
+    event.stopPropagation();
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      addToCart(product);
+    }
+  };
+
+  // === КРИТИЧНО: делаем функции доступными в HTML ===
+  window.showProducts = showProducts;
+  window.showCart = showCart;
+  window.sendOrder = sendOrder;
+  window.removeFromCart = removeFromCart;
+
+  // === ЗАПУСК ===
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand();
+
+  renderProducts();
+  showProducts();
+});
