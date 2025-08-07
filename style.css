@@ -208,7 +208,7 @@ button {
 
 /* Футер-эффект */
 body::after {
-  content: "© Конкретики • Архитектура в деталях";
+  content: "© Конкретика • Архитектура в деталях";
   display: block;
   text-align: center;
   font-size: 12px;
@@ -216,3 +216,4 @@ body::after {
   margin-top: 20px;
   padding-bottom: 20px;
 }
+
