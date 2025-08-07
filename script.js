@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Чувашский театр оперы и балета",
       price: 3500,
       image: "images/chuvash-opera.png",
-      description: "Бетонная модель бренда «Конкретика» в виде одного из самых брутальных сооружений, сохранившихся на постсоветском пространстве — Чувашского государственного театра оперы и балета.\n\nМожно использовать как подсвечник.\n\nВысота изделия составляет 15,5 см.\nВес — порядка 2,5 кг.\n\nВозможно исполнение как в сером, так и в белом вариантах.\n\nСверху предусмотрено место для установки чайной свечи диаметром 4 см. Снизу — пробковая подложка."
+      description: "Бетонная модель бренда «Конкретика» в виде одного из самых брутальных сооружений, сохранившихся на постсоветском пространстве — Чувашского государственного театра оперы и балета.\n\nМожно использовать как подсвечник.\n\nВысота изделия составляет 15,5 см.\nВес — порядка 2,5 кг.\n\nВозможно исполнение как в сером, так и в белом варианте.\n\nСверху предусмотрено место для установки чайной свечи диаметром 4 см. Снизу — пробковая подложка."
     },
     {
       id: 6,
@@ -137,10 +137,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("cart-page").classList.remove("active");
     document.getElementById("product-detail-page").classList.add("active");
 
-    document.querySelector(".btn-add-to-cart").onclick = () => addToCart(product);
+    // Привязываем обе кнопки
+    document.querySelector(".btn-add-to-cart").onclick = () => addToCartAndNotify(product);
+    document.querySelector(".btn-buy-now").onclick = () => buyNow(product);
   }
 
-  function addToCart(product) {
+  function addToCartAndNotify(product) {
     const existing = cart.find(item => item.id === product.id);
     if (existing) {
       existing.quantity += 1;
@@ -150,6 +152,22 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartButton();
     Telegram.WebApp.HapticFeedback?.impactOccurred?.("light");
     showToast(`Добавлено: ${product.name}`);
+  }
+
+  function buyNow(product) {
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    updateCartButton();
+    Telegram.WebApp.HapticFeedback?.impactOccurred?.("rigid");
+    showToast(`Добавлено: ${product.name}`);
+    // Через 0.5 сек — переходим в корзину
+    setTimeout(() => {
+      showCart();
+    }, 500);
   }
 
   function removeFromCart(id) {
@@ -256,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.stopPropagation();
     const product = products.find(p => p.id === productId);
     if (product) {
-      addToCart(product);
+      addToCartAndNotify(product);
     }
   };
 
