@@ -171,8 +171,14 @@ function renderProducts() {
       <img src="${product.image}" alt="${product.name}" class="product-thumb">
       <h3>${product.name}</h3>
       <p class="product-price">${product.price} ₽</p>
-      <button class="btn-view" onclick="showProductDetail(${product.id})">Подробнее</button>
+      <button class="btn-add" onclick="addToCartFromCard(event, ${product.id})">➕ В корзину</button>
     `;
+    // При клике на карточку — открываем детали
+    card.onclick = (e) => {
+      // Если кликнули на кнопку — не открываем детали
+      if (e.target.closest('.btn-add')) return;
+      showProductDetail(product.id);
+    };
     container.appendChild(card);
   });
 }
@@ -182,3 +188,4 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   showProducts();
 });
+
