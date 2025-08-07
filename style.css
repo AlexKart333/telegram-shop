@@ -142,7 +142,7 @@ h1, h2 {
 
 #detail-price {
   font-size: 18px;
-  color: #c00;
+  color: #000;
   margin-bottom: 10px;
   display: block;
 }
@@ -273,3 +273,4 @@ body::after {
   margin-top: 20px;
   padding-bottom: 20px;
 }
+
