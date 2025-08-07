@@ -10,12 +10,19 @@
 </head>
 <body>
   <div id="app">
+    <!-- Логотип (всегда сверху) -->
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Логотип Конкретика" class="logo" onclick="showProducts()">
+    </div>
+
+    <!-- Страница: Товары -->
     <div id="products-page" class="page active">
       <h1>КОНКРЕТИКА</h1>
       <div id="products-list" class="products-grid"></div>
       <button onclick="showCart()" class="btn-primary">КОРЗИНА (0)</button>
     </div>
 
+    <!-- Страница: Детали товара -->
     <div id="product-detail-page" class="page">
       <h2 id="detail-title">Товар</h2>
       <div class="product-detail">
@@ -27,6 +34,7 @@
       <button onclick="showProducts()" class="btn-secondary">← НАЗАД</button>
     </div>
 
+    <!-- Страница: Корзина -->
     <div id="cart-page" class="page">
       <h2>КОРЗИНА</h2>
       <div id="cart-items"></div>
@@ -35,6 +43,9 @@
       <button onclick="showProducts()" class="btn-secondary">ПРОДОЛЖИТЬ ПОКУПКИ</button>
     </div>
   </div>
+
+  <!-- Всплывающее уведомление -->
+  <div id="toast" class="toast">Товар добавлен в корзину</div>
 
   <script src="script.js"></script>
 </body>
