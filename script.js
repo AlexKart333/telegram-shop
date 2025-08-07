@@ -1,50 +1,107 @@
-// Пример товаров с описанием и изображением
+// === ТОВАРЫ "КОНКРЕТИКИ" ===
 const products = [
   {
     id: 1,
-    name: "Тёплая кофта",
-    price: 1500,
-    image: "images/hoodie.png",
-    description: "Стильная тёплая кофта из 100% хлопка. Подходит для прохладной погоды.",
-    category: "Одежда"
+    name: "Серый органайзер ПО-2",
+    price: 2500,
+    image: "images/po2-gray.png",
+    description: "Органайзер на рабочий стол в виде символа эпохи — известного каждому советского забора серии ПО-2, разработанного архитектором Бориса Лахмана.\n\nПросто, лаконично, со вкусом.\n\nВыполнено из серого гипсобетона, снизу — пробковая подложка, чтобы не царапать поверхность.\n\nВнешний диаметр: 108 мм\nВнутренний диаметр: 90 мм\nВысота: 105 мм\n\nДоступен и в белом варианте!"
   },
   {
     id: 2,
-    name: "Шерстяная шапка",
-    price: 800,
-    image: "images/hat.png",
-    description: "Шапка из натуральной шерсти. Удерживает тепло даже при минусовой температуре.",
-    category: "Аксессуары"
+    name: "Белый органайзер ПО-2",
+    price: 2500,
+    image: "images/po2-white.png",
+    description: "Белый органайзер на рабочий стол в виде символа эпохи — известного каждому советского забора серии ПО-2, разработанного архитектором Бориса Лахмана.\n\nПросто, лаконично, со вкусом.\n\nВыполнено из белого гипсобетона, снизу — пробковая подложка, чтобы не царапать поверхность.\n\nВнешний диаметр: 108 мм\nВнутренний диаметр: 90 мм\nВысота: 105 мм\n\nДоступен и в сером варианте!"
   },
   {
     id: 3,
-    name: "Тёплые перчатки",
-    price: 600,
-    image: "images/gloves.png",
-    description: "Перчатки с влагоотводящей подкладкой. Подходят для активного отдыха.",
-    category: "Аксессуары"
+    name: "Магнитик «Гостиница Русь»",
+    price: 900,
+    image: "images/rus-hotel-magnet.png",
+    description: "Магнитик на холодильник в виде фасада знаменитой бруталистской гостиницы «Русь».\n\nГостиница расположена в Санкт-Петербурге. Это один из тех объектов, мимо которых трудно пройти. Строгий ритм фасада, никаких излишеств — всё как мы любим.\n\nИзделие выполнено из гипсобетона, размер: 10×6 см.\n\nСзади приклеены 2 магнита-шайбочки.\n\nДоступны в разных расцветках."
+  },
+  {
+    id: 4,
+    name: "Президиум РАН",
+    price: 6000,
+    image: "images/ras.png",
+    description: "Модель главного корпуса Президиума Российской академии наук (РАН) — архитектурной доминанты Москвы, которую заботливо называют \"Золотые мозги\".\n\nБелый гипсобетон, пробковая подложка, \"корона\" выполнена из пластика с золотой покраской.\n\nВысота — 15 см, вес — 850 г. Пробковая подложка."
+  },
+  {
+    id: 5,
+    name: "Чувашский театр оперы и балета",
+    price: 3500,
+    image: "images/chuvash-opera.png",
+    description: "Бетонная модель бренда «Конкретики» в виде одного из самых брутальных сооружений, сохранившихся на постсоветском пространстве — Чувашского государственного театра оперы и балета.\n\nМожно использовать как подсвечник.\n\nВысота изделия составляет 15,5 см.\nВес — порядка 2,5 кг.\n\nВозможно исполнение как в сером, так и в белом вариантах.\n\nСверху предусмотрено место для установки чайной свечи диаметром 4 см. Снизу — пробковая подложка."
+  },
+  {
+    id: 6,
+    name: "НПП «Радуга»",
+    price: 3500,
+    image: "images/raduga.png",
+    description: "Модель доминанты Выборгского района Петербурга от «Конкретики».\n\nЗдание построено в 1990 году специально для ОКБ «Радуга» по проекту малоизвестной архитектурной мастерской.\n\nДлина: 70 мм\nШирина: 60 мм\nВысота: 154 мм\n\nСерый гипсобетон, пробковая подложка.\n\nДоступна к заказу в белом и сером цветах."
+  },
+  {
+    id: 7,
+    name: "Градирня - подставка под благовония",
+    price: 3000,
+    image: "images/cooling-tower.png",
+    description: "Подставка под благовония в виде градирни.\nСерый гипсобетон, 3 составных элемента, в том числе крышка.\nБлаговоние в комплекте.\n\nПринцип действия простой:\n▪️ Поджигаем благовоние\n▪️ Размещаем его на подставке\n▪️ Сверху ставим трубу\n▪️ Наслаждаемся видом дымящей градирни и ароматом\n▪️ Когда закончили — накрываем крышкой и идём по своим делам\n\nДлина: 94 мм\nШирина: 94 мм\nВысота: 112 мм\n\nДоступно в белом варианте."
+  },
+  {
+    id: 8,
+    name: "Подсвечник Дом Советов",
+    price: 3000,
+    image: "images/kaliningrad-duma.png",
+    description: "Подсвечник в виде самого известного советского недостроя — Дома советов, который до недавних пор располагался в центре Калининграда.\n\nЗнаковый памятник архитектуры уже снесён, но память о нём жива.\n\nМы предлагаем поставить свечу за Дом Советов!\n\nДлина - 100 мм\nШирина - 77 мм\nВысота - 107 мм\n\nСерый гипсобетон, пробковая подложка.\n\nВозможно исполнение в белом варианте."
+  },
+  {
+    id: 9,
+    name: "Серый органайзер ПО-3",
+    price: 2000,
+    image: "images/po3-gray.png",
+    description: "Органайзер на рабочий стол серого цвета в виде советского забора серии ПО-3.\n\nВыполнено из серого гипсобетона, снизу — пробковая подложка, чтобы не царапать поверхность.\n\nВнешний диаметр: 108 мм\nВнутренний диаметр: 90 мм\nВысота: 105 мм\n\nДоступен и в белом варианте!"
+  },
+  {
+    id: 10,
+    name: "Белый органайзер ПО-3",
+    price: 2000,
+    image: "images/po3-white.png",
+    description: "Органайзер на рабочий стол белого цвета в виде советского забора серии ПО-3.\n\nВыполнено из белого гипсобетона, снизу — пробковая подложка, чтобы не царапать поверхность.\n\nВнешний диаметр: 108 мм\nВнутренний диаметр: 90 мм\nВысота: 105 мм"
+  },
+  {
+    id: 11,
+    name: "Архив ВМФ",
+    price: 3000,
+    image: "images/vmf-archive.png",
+    description: "Модель в виде высотки Российского государственного архива Военно-Морского Флота. Одна из первых моделей «Конкретики».\n\nПо изначальному плану 22-этажное здание хотели возвести в Санкт-Петербурге к 1975 году, но из-за бюрократических проволочек строительство постоянно откладывалось, в итоге архив в том виде, в котором он существует сейчас, завершили лишь к 2006 году.\n\nДлина: 60 мм\nШирина: 60 мм\nВысота: 146 мм\n\nСерый гипсобетон. Пробковая подложка."
+  },
+  {
+    id: 12,
+    name: "Подсвечники ПО-2",
+    price: 3000,
+    image: "images/po2-candleholders.png",
+    description: "Подсвечники в виде известных каждому заборов серии ПО-2 архитектора Бориса Лахмана.\n\nПросто, красиво и со вкусом. Свечи и подставка — в комплекте.\n\nРазмеры подставки / самих подсвечников:\n\nДлина - 175 мм / 59 мм\nШирина - 90 мм / 59 мм\nВысота - 15 мм / 54 мм"
   }
 ];
 
-// Корзина
+// === КОРЗИНА ===
 let cart = [];
 let cartButton;
 
-// Текущая страница
-let currentPage = 'products';
-
-// Инициализация
+// === ИНИЦИАЛИЗАЦИЯ ===
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+Telegram.WebApp.WebApp.setHeaderColor("#000000");
 
 cartButton = document.querySelector('#products-page .btn-primary');
 
-// === Функции навигации ===
+// === ФУНКЦИИ ===
 function showProducts() {
   document.getElementById("products-page").classList.add("active");
   document.getElementById("cart-page").classList.remove("active");
   document.getElementById("product-detail-page").classList.remove("active");
-  currentPage = 'products';
   updateCartButton();
 }
 
@@ -52,7 +109,6 @@ function showCart() {
   document.getElementById("products-page").classList.remove("active");
   document.getElementById("cart-page").classList.add("active");
   document.getElementById("product-detail-page").classList.remove("active");
-  currentPage = 'cart';
   renderCart();
 }
 
@@ -60,24 +116,19 @@ function showProductDetail(productId) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
 
-  const detailPage = document.getElementById("product-detail-page");
+  document.getElementById("detail-title").textContent = product.name;
+  document.getElementById("detail-price").textContent = `Цена: ${product.price} ₽`;
+  document.getElementById("detail-description").textContent = product.description;
+  document.querySelector(".product-image").src = product.image;
+
   document.getElementById("products-page").classList.remove("active");
   document.getElementById("cart-page").classList.remove("active");
-  detailPage.classList.add("active");
-  currentPage = 'detail';
+  document.getElementById("product-detail-page").classList.add("active");
 
-  detailPage.querySelector("h2").textContent = product.name;
-  detailPage.querySelector(".product-image").src = product.image;
-  detailPage.querySelector(".product-price").textContent = `${product.price} ₽`;
-  detailPage.querySelector(".product-description").textContent = product.description;
-  detailPage.querySelector(".product-category").textContent = `Категория: ${product.description}`;
-
-  // Обновляем кнопку "Добавить в корзину"
-  const addButton = detailPage.querySelector(".btn-add-to-cart");
+  const addButton = document.querySelector(".btn-add-to-cart");
   addButton.onclick = () => addToCart(product);
 }
 
-// === Корзина ===
 function addToCart(product) {
   const existing = cart.find(item => item.id === product.id);
   if (existing) {
@@ -86,17 +137,7 @@ function addToCart(product) {
     cart.push({ ...product, quantity: 1 });
   }
   updateCartButton();
-  Telegram.WebApp.HapticFeedback.impactOccurred("light"); // вибрация (на iOS)
-}
-
-function addToCartFromCard(event, productId) {
-  event.stopPropagation(); // Останавливаем всплытие — чтобы не открылись детали
-  const product = products.find(p => p.id === productId);
-  if (product) {
-    addToCart(product);
-    // Лёгкая вибрация при добавлении
-    Telegram.WebApp.HapticFeedback.impactOccurred("light");
-  }
+  Telegram.WebApp.HapticFeedback.impactOccurred("light");
 }
 
 function removeFromCart(id) {
@@ -108,7 +149,7 @@ function removeFromCart(id) {
 function updateCartButton() {
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
   if (cartButton) {
-    cartButton.textContent = `Корзина (${count})`;
+    cartButton.textContent = `КОРЗИНА (${count})`;
   }
 }
 
@@ -117,7 +158,7 @@ function renderCart() {
   const totalEl = document.getElementById("total-price");
 
   if (cart.length === 0) {
-    container.innerHTML = "<p>Корзина пуста</p>";
+    container.innerHTML = "<p>КОРЗИНА ПУСТА</p>";
     totalEl.textContent = "0";
     return;
   }
@@ -147,7 +188,6 @@ function renderCart() {
   totalEl.textContent = total;
 }
 
-// === Оформление заказа ===
 function sendOrder() {
   if (cart.length === 0) return;
 
@@ -156,6 +196,7 @@ function sendOrder() {
 
   const message = {
     action: "order",
+    brand: "Конкретики",
     user: userName,
     userId: user.id,
     items: cart.map(item => ({
@@ -169,10 +210,10 @@ function sendOrder() {
   Telegram.WebApp.sendData(JSON.stringify(message));
 }
 
-// === Рендер товаров ===
+// === РЕНДЕР ТОВАРОВ ===
 function renderProducts() {
   const container = document.getElementById("products-list");
-  container.innerHTML = ""; // очистим
+  container.innerHTML = "";
 
   products.forEach(product => {
     const card = document.createElement("div");
@@ -181,11 +222,9 @@ function renderProducts() {
       <img src="${product.image}" alt="${product.name}" class="product-thumb">
       <h3>${product.name}</h3>
       <p class="product-price">${product.price} ₽</p>
-      <button class="btn-add" onclick="addToCartFromCard(event, ${product.id})">➕ В корзину</button>
+      <button class="btn-add" onclick="addToCartFromCard(event, ${product.id})">➕ В КОРЗИНУ</button>
     `;
-    // При клике на карточку — открываем детали
     card.onclick = (e) => {
-      // Если кликнули на кнопку — не открываем детали
       if (e.target.closest('.btn-add')) return;
       showProductDetail(product.id);
     };
@@ -193,10 +232,17 @@ function renderProducts() {
   });
 }
 
-// Запуск при загрузке
+// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ===
+function addToCartFromCard(event, productId) {
+  event.stopPropagation();
+  const product = products.find(p => p.id === productId);
+  if (product) {
+    addToCart(product);
+  }
+}
+
+// === ЗАПУСК ===
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   showProducts();
 });
-
-
