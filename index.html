@@ -9,13 +9,24 @@
 </head>
 <body>
   <div id="app">
-    <h1>🛍️ Добро пожаловать в магазин!</h1>
-
     <!-- Страница: Товары -->
     <div id="products-page" class="page active">
-      <h2>Товары</h2>
-      <div id="products-list"></div>
+      <h1>🛍️ Наш магазин</h1>
+      <div id="products-list" class="products-grid"></div>
       <button onclick="showCart()" class="btn-primary">Корзина (0)</button>
+    </div>
+
+    <!-- Страница: Детали товара -->
+    <div id="product-detail-page" class="page">
+      <h2>Товар</h2>
+      <div class="product-detail">
+        <img src="" alt="Фото товара" class="product-image">
+        <p class="product-price"><strong>Цена: <span id="price"></span> ₽</strong></p>
+        <p class="product-category"></p>
+        <p class="product-description"></p>
+        <button class="btn-add-to-cart">Добавить в корзину</button>
+      </div>
+      <button onclick="showProducts()" class="btn-secondary">Назад</button>
     </div>
 
     <!-- Страница: Корзина -->
@@ -24,7 +35,7 @@
       <div id="cart-items"></div>
       <p><strong>Итого: <span id="total-price">0</span> ₽</strong></p>
       <button onclick="sendOrder()" class="btn-success">Оформить заказ</button>
-      <button onclick="showProducts()" class="btn-secondary">Назад</button>
+      <button onclick="showProducts()" class="btn-secondary">Продолжить покупки</button>
     </div>
   </div>
 
