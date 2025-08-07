@@ -164,6 +164,20 @@ h1, h2 {
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+
+.btn-buy-now {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  cursor: pointer;
   margin-bottom: 12px;
   border-radius: 0;
 }
