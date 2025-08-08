@@ -2,6 +2,31 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Страница загружена");
 
+  // === УПРАВЛЕНИЕ ТЕМОЙ ===
+  const app = document.getElementById("app");
+  const themeSwitch = document.getElementById("themeSwitch");
+
+  // Проверяем сохранённую тему
+  const savedTheme = localStorage.getItem("theme") || "light";
+  if (savedTheme === "dark") {
+    app.classList.remove("theme-light");
+    app.classList.add("theme-dark");
+    themeSwitch.checked = true;
+  }
+
+  // Переключение темы
+  themeSwitch.addEventListener("change", () => {
+    if (themeSwitch.checked) {
+      app.classList.remove("theme-light");
+      app.classList.add("theme-dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      app.classList.remove("theme-dark");
+      app.classList.add("theme-light");
+      localStorage.setItem("theme", "light");
+    }
+  });
+
   // === ТОВАРЫ ===
   const products = [
     {
@@ -37,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Чувашский театр оперы и балета",
       price: 3500,
       image: "images/chuvash-opera.png",
-      description: "Бетонная модель бренда «Конкретика» в виде одного из самых брутальных сооружений, сохранившихся на постсоветском пространстве — Чувашского государственного театра оперы и балета.\n\nМожно использовать как подсвечник.\n\nВысота изделия составляет 15,5 см.\nВес — порядка 2,5 кг.\n\nВозможно исполнение как в сером, так и в белом варианте.\n\nСверху предусмотрено место для установки чайной свечи диаметром 4 см. Снизу — пробковая подложка."
+      description: "Бетонная модель бренда «Конкретика» в виде одного из самых брутальных сооружений, сохранившихся на постсоветском пространстве — Чувашского государственного театра оперы и балета.\n\nМожно использовать как подсвечник.\n\nВысота изделия составляет 15,5 см.\nВес — порядка 2,5 кг.\n\nВозможно исполнение как в сером, так и в белом вариантах.\n\nСверху предусмотрено место для установки чайной свечи диаметром 4 см. Снизу — пробковая подложка."
     },
     {
       id: 6,
@@ -137,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("cart-page").classList.remove("active");
     document.getElementById("product-detail-page").classList.add("active");
 
-    // Привязываем обе кнопки
     document.querySelector(".btn-add-to-cart").onclick = () => addToCartAndNotify(product);
     document.querySelector(".btn-buy-now").onclick = () => buyNow(product);
   }
@@ -164,7 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartButton();
     Telegram.WebApp.HapticFeedback?.impactOccurred?.("rigid");
     showToast(`Добавлено: ${product.name}`);
-    // Через 0.5 сек — переходим в корзину
     setTimeout(() => {
       showCart();
     }, 500);
