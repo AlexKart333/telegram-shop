@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
-    <!-- Логотип (всегда сверху) -->
-    <div class="logo-container">
-      <img src="images/logo.png" alt="Логотип Конкретика" class="logo" onclick="showProducts()">
+  <div id="app" class="theme-light"> <!-- theme-light или theme-dark -->
+    <!-- Логотип и переключатель темы -->
+    <div class="header">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="Логотип Конкретика" class="logo" onclick="showProducts()">
+      </div>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch">
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
 
     <!-- Страница: Товары -->
@@ -41,7 +49,7 @@
       <div id="cart-items"></div>
       <p><strong>ИТОГО: <span id="total-price">0</span> ₽</strong></p>
       <button onclick="sendOrder()" class="btn-success">ОФОРМИТЬ ЗАКАЗ</button>
-      <button onclick="showProducts()" class="btn-secondary">← НАЗАД</button>
+      <button onclick="showProducts()" class="btn-secondary">ПРОДОЛЖИТЬ ПОКУПКИ</button>
     </div>
   </div>
 
@@ -51,4 +59,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
